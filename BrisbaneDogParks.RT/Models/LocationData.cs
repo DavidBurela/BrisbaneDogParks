@@ -52,7 +52,7 @@ namespace BrisbaneDogParks.RT.Models
         public int CompareTo(object obj)
         {
             var locationData = obj as LocationData;
-            return string.CompareOrdinal(LocationName, locationData.LocationName);
+            return string.CompareOrdinal(LocationName, locationData.LocationName + locationData.Address);   // adding address to make more unique (multiple parks with same name)
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
